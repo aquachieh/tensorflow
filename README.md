@@ -42,7 +42,7 @@ cd ../../..
 
 2.Create a folder and a softlink to use the pre-trained model
 ```
-NET=res101
+NET=res101   #vgg16
 TRAIN_IMDB=voc_2007_trainval+voc_2012_trainval
 mkdir -p output/${NET}/${TRAIN_IMDB}
 cd output/${NET}/${TRAIN_IMDB}
@@ -58,3 +58,8 @@ GPU_ID=0
 CUDA_VISIBLE_DEVICES=${GPU_ID} ./tools/demo.py
 ```
 
+4. for vgg16
+```
+GPU_ID=1
+CUDA_VISIBLE_DEVICES=${GPU_ID} ./tools/demo_for_person.py --net vgg16 
+```
