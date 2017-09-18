@@ -63,9 +63,10 @@ CUDA_VISIBLE_DEVICES=${GPU_ID} ./tools/demo.py
 GPU_ID=1
 CUDA_VISIBLE_DEVICES=${GPU_ID} ./tools/demo_for_person.py --net vgg16 
 ```
-demo_for_person.py will output a bbox.txt [filename,label,xmin,ymin,xmax,ymax]
+- demo_for_person.py will output a bbox.txt [filename,label,xmin,ymin,xmax,ymax]
 
-- the netseting such as image size are set in lib/model/config.py
+
+the netseting such as image size are set in lib/model/config.py
 ```
 # Scale to use during testing (can NOT list multiple scales)
 # The scale is the pixel size of an image's shortest side
