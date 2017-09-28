@@ -56,12 +56,13 @@ cd ../../..
 #pip install matplotlib,image
 GPU_ID=0
 CUDA_VISIBLE_DEVICES=${GPU_ID} ./tools/demo.py
+#CUDA_VISIBLE_DEVICES=${GPU_ID} ./tools/demo_for_person.py --net res101
 ```
 
 4. for vgg16
 ```
 GPU_ID=1
-CUDA_VISIBLE_DEVICES=${GPU_ID} ./tools/demo_for_person.py --net vgg16 
+CUDA_VISIBLE_DEVICES=${GPU_ID} ./tools/demo_for_person.py --net vgg16
 ```
 - demo_for_person.py will output a bbox.txt [filename,label,xmin,ymin,xmax,ymax]
 
