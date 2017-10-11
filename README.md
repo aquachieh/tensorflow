@@ -54,6 +54,7 @@ cd ../../..
 ```
 # at reposistory root
 #pip install matplotlib,image
+~/tf-faster-rcnn$
 GPU_ID=0
 CUDA_VISIBLE_DEVICES=${GPU_ID} ./tools/demo.py
 #CUDA_VISIBLE_DEVICES=${GPU_ID} ./tools/demo_for_person.py --net res101
@@ -61,6 +62,7 @@ CUDA_VISIBLE_DEVICES=${GPU_ID} ./tools/demo.py
 
 4. for vgg16
 ```
+~/tf-faster-rcnn$
 GPU_ID=1
 CUDA_VISIBLE_DEVICES=${GPU_ID} ./tools/demo_for_person.py --net vgg16
 ```
@@ -68,7 +70,7 @@ CUDA_VISIBLE_DEVICES=${GPU_ID} ./tools/demo_for_person.py --net vgg16
 
 
 ### ----- other ----- ###
-the netseting such as image size are set in lib/model/config.py
+the netseting such as image size are set in ```lib/model/config.py```
 ```
 # Scale to use during testing (can NOT list multiple scales)
 # The scale is the pixel size of an image's shortest side
