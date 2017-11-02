@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 '''
+printlog1.py
 # Install Nvidia-docker
 # command:$ wget -P /tmp https://github.com/NVIDIA/nvidia-docker/releases/download/v1.0.1/nvidia-docker_1.0.1-1_amd64.deb
 # output:
