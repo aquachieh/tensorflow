@@ -23,13 +23,13 @@ def id_generator(size=12, chars=string.ascii_lowercase + string.digits): #id_gen
     return ''.join(random.choice(chars) for _ in range(size))
 
 def randnum():
-    return uniform(0, 5)  #float
+    return uniform(0, 2)  #float
 
 UP_ONE_LINE = "\033[F"
-time_s = 0.13
-intvl1 = 5.7
-intvl2 = 2.7
-id_num = 14
+time_s = 0.17
+intvl1 = 3.2
+intvl2 = 7.7
+id_num = 10
 ids = []
 ids.extend([id_generator() for _ in xrange(id_num)])
 oriids = copy.deepcopy(ids)
@@ -46,7 +46,7 @@ done_id = []
 show_row = id_num
 
 def clean_the_screen(row):
-    for i in xrange(show_row): # clean the screen
+    for i in xrange(row): # clean the screen
         sys.stdout.write(" "*46 +'\n')
 
 clean_the_screen(show_row)
@@ -83,5 +83,4 @@ TXT0 = "Digest: sha256:685ae5cc01ecb126569fcf9c8ee6168dea003fa836c46e2f5b7f9f0fb
 sys.stdout.write(TXT0)
 sys.stdout.flush()
 #time.sleep(0.5)
-
 

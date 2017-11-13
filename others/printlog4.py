@@ -47,7 +47,7 @@ done_id = []
 show_row = id_num
 
 def clean_the_screen(row):
-    for i in xrange(show_row): # clean the screen
+    for i in xrange(row): # clean the screen
         sys.stdout.write(" "*46 +'\n')
 
 clean_the_screen(show_row)
