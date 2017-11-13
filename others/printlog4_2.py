@@ -29,7 +29,7 @@ time_s = 0.32
 intvl1 = 3.2
 intvl2 = 7.7
 id_num = 6
-length = 25
+length = 12
 
 ids = ["Install ubuntu16.04","Install nvidia/cuda:8.0-cudnn6","Install TensorFlow dependencies","Install TensorFlow GPU version","Set up notebook config","Copy sample notebooks"]
 
@@ -48,7 +48,7 @@ show_row = id_num
 
 def clean_the_screen(row):
     for i in xrange(row): # clean the screen
-        sys.stdout.write(" "*97 +'\n')
+        sys.stdout.write(" "*80 +'\n')
 
 clean_the_screen(show_row)
 
@@ -66,17 +66,17 @@ while(ids!=[] or now_id!=[]):
                 if dic2[j] < 0:
                     done_id.append(j)
                     now_id.remove(j)
-                    sys.stdout.write(" "*97+'\r')
-                    sys.stdout.write("{0:<32}: Pull complete".format(j)+'\n')
+                    sys.stdout.write(" "*80+'\r')
+                    sys.stdout.write("{0:<31}: Pull complete".format(j)+'\n')
                 else:
-                    sys.stdout.write("{0:<32}: Extracting  {3:>3d}%[{1}>{2}] {4:>6.2f}MB/{5}MB".format(j,'='*(int((gudin[j]-dic2[j])/gudin[j]*length)),' '*(length-int((gudin[j]-dic2[j])/gudin[j]*length)),int((gudin[j]-dic2[j])/gudin[j]*100.0),gudin[j]-dic2[j] ,gudin[j])+'\n')
+                    sys.stdout.write("{0:<31}: Extracting [{1}>{2}] {4:>6.2f}MB/{5}MB".format(j,'='*(int((gudin[j]-dic2[j])/gudin[j]*length)),' '*(length-int((gudin[j]-dic2[j])/gudin[j]*length)),int((gudin[j]-dic2[j])/gudin[j]*100.0),gudin[j]-dic2[j] ,gudin[j])+'\n')
             else :  
-                sys.stdout.write("{0:<32}: Downloading {3:>3d}%[{1}>{2}] {4:>6.2f}MB/{5}MB".format(j,'='*(int((gudin[j]-dic[j])/gudin[j]*length)),' '*(length-int((gudin[j]-dic[j])/gudin[j]*length)),int((gudin[j]-dic[j])/gudin[j]*100.0),gudin[j]-dic[j] ,gudin[j])+'\n')
+                sys.stdout.write("{0:<31}: Downloading [{1}>{2}] {4:>6.2f}MB/{5}MB".format(j,'='*(int((gudin[j]-dic[j])/gudin[j]*length)),' '*(length-int((gudin[j]-dic[j])/gudin[j]*length)),int((gudin[j]-dic[j])/gudin[j]*100.0),gudin[j]-dic[j] ,gudin[j])+'\n')
         elif j in done_id:
-            sys.stdout.write(" "*97+'\r')
-            sys.stdout.write("{0:<32}: Pull complete".format(j)+'\n')  
+            sys.stdout.write(" "*80+'\r')
+            sys.stdout.write("{0:<31}: Pull complete".format(j)+'\n')  
         else: 
-            sys.stdout.write("{0:<32}: Waiting".format(j)+'\n')
+            sys.stdout.write("{0:<31}: Waiting".format(j)+'\n')
     sys.stdout.flush()
     time.sleep(time_s)
 
