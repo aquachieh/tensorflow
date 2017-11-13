@@ -78,5 +78,10 @@ while(ids!=[] or now_id!=[]):
     sys.stdout.flush()
     time.sleep(time_s)
 
+TXT0 = "Digest: sha256:685ae5cc01ecb126569fcf9c8ee6168dea003fa836c46e2f5b7f9f0fbabf3fa3\nStatus: Downloaded newer image for tensorflow/tensorflow:latest-devel-gpu\n"
+
+sys.stdout.write(TXT0)
+sys.stdout.flush()
+#time.sleep(0.5)
 
 
