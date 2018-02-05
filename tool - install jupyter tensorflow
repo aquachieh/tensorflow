@@ -47,7 +47,7 @@ Hello, TensorFlow!               #成功的話就會跑出這句：）
 
 #  ------------ 開啟jupyter ------------ #
 點網址+ctrl 開網頁改網址前面localhost改成10.36.169.170
-http://10.36.169.170:5751/?token=9730264d19cd58fd1a9fbd2624b7fca53a421a1b0b2c5e44
+http://10.36.169.1xx:5xxx/?token=9730264d19cd58fd1a9fbd2624b7fca53a421a1b0b2c5e44
 
 
 -------- done -------- 
