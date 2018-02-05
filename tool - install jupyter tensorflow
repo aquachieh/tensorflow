@@ -1,0 +1,54 @@
+'''
+tool -  install jupyter tensorflow , port
+'''
+#  ------------ 先建一個新的pyenv ------------ #
+server2:~$ pyenv virtualenv 2.7.12 tensorflow
+server2:~$ pyenv version  #可看到目前只有一個環境叫"system"
+server2:~$ pyenv versions  #可看到所有的環境
+server2:~$ pyenv shell tensorflow    #切換方式 $ pyenv shell "system/caffe/xxx.."
+ 
+#  ------------ 安裝tensorflow gpu版 ------------ #
+(tensorflow) server2:~$ pip install --upgrade tensorflow-gpu 
+(tensorflow) server2:~$ python
+>>> import tensorflow as tf
+>>> hello = tf.constant('Hello, TensorFlow!')
+>>> sess = tf.Session()
+>>> print(sess.run(hello))
+Hello, TensorFlow!               #成功的話就會跑出這句：）
+>>> quit()
+
+#  ------------ 安裝ipython,jupyter ------------ #
+(tensorflow) server2:~$ pip install ipython ipython-notebook
+(tensorflow) server2:~$ pip install jupyter
+
+#  ------------ 生成 /home/ipynb/.jupyter/jupyter_notebook_config.py 文件 ------------ #
+(tensorflow) server2:~$ jupyter notebook --generate-config
+(tensorflow) server2:~$ vim ~/.jupyter/jupyter_notebook_config.py   # 改兩行
+		## The IP address the notebook server will listen on.  # 允許從任意IP訪問
+		c.NotebookApp.ip = '*'
+		## The port the notebook server will listen on.  # 運行端口
+		c.NotebookApp.port = 5751
+
+#  ------------ 請lec幫忙開port 5xxx(不跟別人重複) ------------ #
+(tensorflow) server2:~$ jupyter notebook
+[W 16:14:16.631 NotebookApp] WARNING: The notebook server is listening on all IP addresses and not using encryption. This is not recommended.
+[I 16:14:16.643 NotebookApp] Serving notebooks from local directory: /home/sss
+[I 16:14:16.643 NotebookApp] 0 active kernels 
+[I 16:14:16.643 NotebookApp] The Jupyter Notebook is running at: http://[all ip addresses on your system]:5751/?token=9ss0264d19cd58fd1a9fbd2624b7fca53a421a1b0b2c5e44
+[I 16:14:16.643 NotebookApp] Use Control-C to stop this server and shut down all kernels (twice to skip confirmation).
+[W 16:14:16.644 NotebookApp] No web browser found: could not locate runnable browser.
+[C 16:14:16.644 NotebookApp] 
+    
+    Copy/paste this URL into your browser when you connect for the first time,
+    to login with a token:
+        http://localhost:5751/?token=9ss0264d19cd58fd1a9fbd2624b7fca53a421a1b0b2c5e44
+[I 16:14:30.613 NotebookApp] 302 GET /?token=9ss0264d19cd58fd1a9fbd2624b7fca53a421a1b0b2c5e44 (10.36.174.1xx) 0.96ms
+
+
+#  ------------ 開啟jupyter ------------ #
+點網址+ctrl 開網頁改網址前面localhost改成10.36.169.170
+http://10.36.169.170:5751/?token=9730264d19cd58fd1a9fbd2624b7fca53a421a1b0b2c5e44
+
+
+-------- done -------- 
+
